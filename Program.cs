@@ -80,3 +80,17 @@ Console.WriteLine(myString);
 // required keyword
 var requiredKeyWord = new RequiredKeyWord() { XProperty = 1 };
 var notRequiredKeyWord = new NotRequiredKeyWord();
+
+// Stack: value type
+// Heap: reference type
+
+// ref fields and ref scoped variables
+var refOnFieldsAndScopedVariables = new RefOnFieldsAndScopedVariables();
+refOnFieldsAndScopedVariables.XProperty = 2;
+Console.WriteLine($"refOnFieldsAndScopedVariables.XProperty: {refOnFieldsAndScopedVariables.XProperty}");
+refOnFieldsAndScopedVariables.RandomizeX();
+Console.WriteLine($"refOnFieldsAndScopedVariables.XProperty: {refOnFieldsAndScopedVariables.XProperty}");
+
+
+// File local types
+// FileLocalTypes fileLocalTypes = new FileLocalTypes(); // not allowed
