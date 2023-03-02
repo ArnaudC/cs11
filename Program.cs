@@ -1,4 +1,6 @@
-﻿// Generic attributes
+﻿using CS11;
+
+
+// Generic attributes
 var classWithTypeGenericAttribute = new ClassWithTypeGenericAttribute();
 Console.WriteLine(classWithTypeGenericAttribute.Method(2));
-
