@@ -5,4 +5,6 @@ Download https://dot.net/v1/dotnet-install.sh
 Run this :
 ```bash
 ./dotnet-install.sh --channel 8.0
+export DOTNET_ROOT=$HOME/.dotnet >> ~/.bashrc
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools >> ~/.bashrc
 ```
