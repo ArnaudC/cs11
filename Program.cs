@@ -1,4 +1,5 @@
-﻿using CS11;
+﻿using System.Text;
+using CS11;
 
 
 // Generic attributes
@@ -55,3 +56,27 @@ var m2 = new Measurement();
 Console.WriteLine(m2);  // output: 0 ()
 var m3 = default(Measurement);
 Console.WriteLine(m3);  // output: 0 ()
+
+// Pattern match Span<char> or ReadOnlySpan<char> on a constant string
+static bool Is123(ReadOnlySpan<char> s)
+{
+    return s is "123";
+}
+static bool IsABC(Span<char> s)
+{
+    return s switch { "ABC" => true, _ => false };
+}
+Console.WriteLine("Is123(\"123\"): {0}", Is123("123"));
+char[] sa = "ABC".ToCharArray();
+var sp = sa.AsSpan();
+Console.WriteLine("IsABC(\"ABC\"): {0}", IsABC(sp));
+
+// UTF-8 string literals
+var utf8string = "hello"u8;
+var bytes = utf8string.ToArray();
+string myString = Encoding.UTF8.GetString(bytes);
+Console.WriteLine(myString);
+
+// required keyword
+var requiredKeyWord = new RequiredKeyWord() { XProperty = 1 };
+var notRequiredKeyWord = new NotRequiredKeyWord();
