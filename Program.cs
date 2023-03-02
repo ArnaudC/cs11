@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("dotnet 11 hello");
+﻿// Generic attributes
+var classWithTypeGenericAttribute = new ClassWithTypeGenericAttribute();
+Console.WriteLine(classWithTypeGenericAttribute.Method(2));
+
